@@ -15,8 +15,8 @@ namespace DevFreela.Core.Entities
             Active = true;
 
             Skills = new List<UserSkill>();
-            OwnerdProjects = new List<Projetc>();
-            FreelanceProjects = new List<Projetc>();
+            OwnerdProjects = new List<Project>();
+            FreelanceProjects = new List<Project>();
 
         }
 
@@ -24,12 +24,14 @@ namespace DevFreela.Core.Entities
         public string Email { get; private set; }
         public DateTime BirthDate { get; private set; }
         public DateTime CreatedAt { get; private set; }
-         public bool Active { get; private set; }
-         
+        public bool Active { get; private set; }
+
         public List<UserSkill> Skills { get; private set; }
-        public List<Projetc> OwnerdProjects { get; private set; }
-        public List<Projetc> FreelanceProjects { get; private set; }
+        public List<Project> OwnerdProjects { get; private set; }
+        public List<Project> FreelanceProjects { get; private set; }
+
        
+
 
     }
 }

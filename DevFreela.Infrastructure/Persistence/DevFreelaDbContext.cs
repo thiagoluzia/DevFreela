@@ -10,11 +10,11 @@ namespace DevFreela.Infrastructure.Persistence
     {
         public DevFreelaDbContext()
         {
-            Projetcs = new List<Projetc>
+            Projects = new List<Project>
             {
-                new Projetc("Api .Net Core for game", "API for management games",1,1,10000),
-                new Projetc("Api .Net Core for school", "API for management school",1,1,20000),
-                new Projetc("Api .Net Core for finance", "API for management finance",1,1,30000)
+                new Project("Api .Net Core for game", "API for management games",1,1,10000),
+                new Project("Api .Net Core for school", "API for management school",1,1,20000),
+                new Project("Api .Net Core for finance", "API for management finance",1,1,30000)
             };
 
             Users = new List<User>
@@ -29,9 +29,12 @@ namespace DevFreela.Infrastructure.Persistence
                 new Skill("C#"),
                 new Skill("SQL")
             };
+
+            
         }
-        public List<Projetc> Projetcs { get; set; }
+        public List<Project> Projects { get; set; }
         public List<User> Users { get; set; }
         public List<Skill> Skills { get; set; }
+        public List<ProjectComment> ProjectComments { get; set; }
     }
 }

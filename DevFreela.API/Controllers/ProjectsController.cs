@@ -20,7 +20,7 @@ namespace DevFreela.API.Controllers
         }
 
 
-        //api/projects?query=netcore
+        // api/projects?query=netcore
         [HttpGet]
         public IActionResult Get(string query)
         {
@@ -28,7 +28,7 @@ namespace DevFreela.API.Controllers
             return Ok();
         }
 
-        //api/projects/1
+        // api/projects/1
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -39,6 +39,7 @@ namespace DevFreela.API.Controllers
             return Ok();
         }
 
+        // api/project/
         [HttpPost]
         public IActionResult Post([FromBody] CreateProjectModel createProject)
         {
@@ -51,7 +52,7 @@ namespace DevFreela.API.Controllers
             return CreatedAtAction(nameof(GetById), new { id = createProject.Id }, createProject);
         }
 
-        //api/project/1
+        // api/project/1
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] UpdateProjectModel updateModel)
         {
@@ -64,7 +65,7 @@ namespace DevFreela.API.Controllers
             return NoContent();
         }
 
-        //api/projetc/1
+        // api/projetc/1
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
