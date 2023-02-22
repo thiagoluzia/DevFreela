@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DevFreela.Application.Services.Interfaces;
 using DevFreela.Application.ViewModels;
 using DevFreela.Infrastructure.Persistence;
@@ -14,10 +11,10 @@ namespace DevFreela.Application.Services.Implementations
         private readonly DevFreelaDbContext _dbContext;
         public SkillService(DevFreelaDbContext dbContext)
         {
-            _dbContext= dbContext;
+            _dbContext = dbContext;
         }
 
-        public List<SkillViewModel> GetAll()
+        public List<SkillViewModel> Get()
         {
             var skills = _dbContext.Skills;
 
@@ -26,6 +23,21 @@ namespace DevFreela.Application.Services.Implementations
                 .ToList();
 
             return skillViewModel;
+        }
+
+        public SkillViewModel GetById(int id)
+        {
+            var skill = _dbContext.Skills.FirstOrDefault(s => s.Id == id);
+
+            if (skill is null) return null;
+
+            var skillViewModel = new SkillViewModel(
+                skill.Id,
+                skill.Description
+                );
+
+            return skillViewModel;
+            
         }
     }
 }

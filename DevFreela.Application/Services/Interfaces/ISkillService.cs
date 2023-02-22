@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using DevFreela.Application.ViewModels;
 
 namespace DevFreela.Application.Services.Interfaces
 {
     public interface ISkillService
     {
-        List<SkillViewModel> GetAll();
+        List<SkillViewModel> Get();
+        SkillViewModel GetById(int id);
+        
     }
 }
