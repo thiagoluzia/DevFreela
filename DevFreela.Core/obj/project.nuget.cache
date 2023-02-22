@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "/+IYavuh/IfWMe0Q/6QxmmIllmxBgmTkACwrczjVoIk0qHPQHQcNi4hQ99KIwy6zYYiId2oTIz8YcBfMBspB4g==",
+  "dgSpecHash": "Ljy9Tiyj2w3YqVaNtdARgTKCKKVkBI9HW5tfBvFQFR+hch2JKjY1ixvtc2nC2RjHOy6wzLYAFrLvT0vIAipl9Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\thiag\\source\\repos\\DevFreela\\DevFreela.Core\\DevFreela.Core.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema ao ler o arquivo de cache C:\\Users\\thiag\\source\\repos\\DevFreela\\DevFreela.Core\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

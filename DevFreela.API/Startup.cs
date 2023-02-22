@@ -1,4 +1,7 @@
 using DevFreela.API.Models;
+using DevFreela.Application.Services.Implementations;
+using DevFreela.Application.Services.Interfaces;
+using DevFreela.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,14 +33,12 @@ namespace DevFreela.API
             //pegando configuraçãodo appseting
             services.Configure<OpeningTimeOption>(Configuration.GetSection("OpeningTime"));
 
-            // uma instancia pra toda aplicação enquanto ela estiver inicializada 
-            //services.AddSingleton<ExampleClass>(e => new ExampleClass { Name = "Initial Stage" });
+            services.AddSingleton<DevFreelaDbContext>();
+            services.AddScoped<IProjectService, ProjectService>();
+            services.AddScoped<ISkillService, SkillService>();
+            services.AddScoped<IUserService, UserService>();
 
-            // uma instancia por requisição, para cada requisição  
-            services.AddScoped<ExampleClass>(e => new ExampleClass { Name = "Initial Stage" });
-
-            // uma instancia por classe 
-            //services.AddTransient<ExampleClass>(e => new ExampleClass { Name = "Initial Stage" });
+           
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
