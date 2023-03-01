@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -33,7 +34,10 @@ namespace DevFreela.API
             //pegando configuraçãodo appseting
             services.Configure<OpeningTimeOption>(Configuration.GetSection("OpeningTime"));
 
-            services.AddSingleton<DevFreelaDbContext>();
+            //services.AddSingleton<DevFreelaDbContext>();
+            var connectionString = Configuration.GetConnectionString("DevFreellaCs");
+            services.AddDbContext<DevFreelaDbContext>(options => options.UseSqlServer(connectionString));
+
             services.AddScoped<IProjectService, ProjectService>();
             services.AddScoped<ISkillService, SkillService>();
             services.AddScoped<IUserService, UserService>();

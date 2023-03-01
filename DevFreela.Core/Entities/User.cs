@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace DevFreela.Core.Entities
 {
@@ -29,8 +27,9 @@ namespace DevFreela.Core.Entities
         public List<UserSkill> Skills { get; private set; }
         public List<Project> OwnerdProjects { get; private set; }
         public List<Project> FreelanceProjects { get; private set; }
+        public List<ProjectComment> Comments { get; private set; }
 
-       
+
 
 
     }
